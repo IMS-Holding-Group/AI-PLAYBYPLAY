@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل الدخول</title>
+  <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+
+  <!-- قسم تسجيل الدخول -->
+  <section class="login-section">
+    <h2>مرحبًا بك في منصة التحليل الذكي</h2>
+
+    <!-- نموذج تسجيل الدخول -->
+    <form action="" method="POST">
+      <label for="username">اسم المستخدم</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">كلمة المرور</label>
+      <input type="password" id="password" name="password" required>
+
+      <!-- زر الدخول يحوّل المستخدم للصفحة الرئيسية -->
+      <button type="button" onclick="window.location.href='index.html'">تسجيل الدخول</button>
+    </form>
+
+    <!-- طرق تسجيل الدخول الأخرى -->
+    <section class="another-login">
+      <p>أو سجّل الدخول باستخدام</p>
+      <a href="#">
+        <img src="google.png" alt="تسجيل دخول باستخدام Google">
+      </a>
+      <a href="#">
+        <img src="apple.png" alt="تسجيل دخول باستخدام Apple">
+      </a>
+      <a href="#">
+        <img src="facebook.png" alt="تسجيل دخول باستخدام Facebook">
+      </a>
+    </section>
+
+    <!-- رابط إنشاء حساب جديد -->
+    <section class="sign-up">
+      <p>ما عندك حساب؟ <a href="Sign-Up.html">سجّل حساب جديد</a></p>
+    </section>
+  </section>
+
+</body>
+</html>
+
+

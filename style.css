@@ -1,0 +1,691 @@
+/* التنسيقات العامة للموقع (الصفحة الرئيسية) */
+/* === Final Finexo-inspired Styling (Perfect Layout Fix) === */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #00bbf0;
+    --secondary-color: #0f1521;
+    --accent-color: #007fa4;
+    --light-bg: #f9f9f9;
+    --dark-bg: #0d1725;
+    --text-color: #ffffff;
+    --button-hover: #008ecf;
+    --card-bg: #132133;
+    --highlight: #00bbf0;
+    --card-shadow: rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Cairo', 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* Header Styling */
+header {
+    background-color: rgba(0, 0, 0, 0.3); /* شفاف */
+    backdrop-filter: blur(8px); /* ضبابية */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: rtl;
+    transition: top 0.4s ease-in-out, box-shadow 0.3s ease;
+    z-index: 999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  header.scrolled {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: #00bbf0;
+    text-decoration: none;
+    margin-left: auto;
+  }
+  
+  .navigation {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+  
+  .navigation a {
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .navigation a:hover {
+    color: #00bbf0;
+  }
+  
+
+/* === Hero Section Styling - Finexo Modern Compact === */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(to bottom, #0f1521, #1b2c46);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    gap: 20px;
+    text-align: center;
+    scroll-margin-top: 100px;
+  }
+  
+  .logo-animation {
+    max-width: 250px;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+ /* === Hero Section Styling - Finexo Modern Compact === */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(to bottom, #0f1521, #1b2c46);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    gap: 5px;
+    text-align: center;
+    scroll-margin-top: 100px;
+  }
+  
+  .logo-animation {
+    max-width: 250px;
+    animation: pulse 2s ease-in-out infinite;
+    margin-bottom: 5px;
+  }
+  
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+  }
+  
+  .hero-image {
+    width: 240px;
+    transition: transform 0.5s ease;
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  h1 {
+    font-size: 2em;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  
+  p {
+    font-size: 1em;
+    margin-bottom: 6px;
+    color: #ccc;
+    animation: fadeIn 1.2s ease-in-out forwards;
+  }
+  
+  .cta-button {
+    padding: 14px 28px;
+    background-color: #00bbf0;
+    color: #132133;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+    animation: fadeIn 1.4s ease-in-out forwards;
+    margin-top: 6px;
+  }
+  
+  .cta-button:hover {
+    background-color: #008ecf;
+    transform: translateY(-3px);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Scroll Target Below Hero */
+  #below-hero {
+    padding: 60px 20px;
+    background-color: #0f1521;
+    color: #fff;
+    text-align: center;
+  }
+  
+  
+  
+
+.matches-container,
+.live-matches-container,
+.recommended-clubs {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 50px auto;
+    width: 90%;
+    box-shadow: 0 0 15px var(--card-shadow);
+    direction: rtl;
+    text-align: right;
+}
+
+.live-matches {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  background-color: #0d1725;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.live-matches img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  max-width: 100%;
+  min-height: 100%;
+  display: block;
+}
+
+.match-text,
+.recommended-clubs-p {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* === Updated Scoreboard Styling (Finexo Theme) === */
+.scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #132133;
+    border-radius: 15px;
+    padding: 15px 25px;
+    margin: 10px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    transition: transform 0.3s ease;
+  }
+  
+  /* === Updated Scoreboard Styling (Compact Version) === */
+.scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #132133;
+    border-radius: 12px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    transition: transform 0.3s ease;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .scoreboard:hover {
+    transform: scale(1.01);
+  }
+  
+  .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 70px;
+  }
+  
+  .team img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+    margin-bottom: 6px;
+  }
+  
+  .team p {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #ffffffdd;
+  }
+  
+  .score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .score p {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #00bbf0;
+    margin: 0;
+  }
+  
+  .live-score {
+    background-color: #e74c3c;
+    color: white;
+    padding: 6px 16px;
+    border: none;
+    border-radius: 18px;
+    font-weight: bold;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .live-score:hover {
+    background-color: #c0392b;
+  }
+  
+  .match-text {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #00bbf0;
+  }
+  
+  .match-text p {
+    margin: 5px 0;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    .scoreboard {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+      padding: 15px;
+    }
+  
+    .team, .score {
+      width: 100%;
+    }
+  
+    .team img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  
+button.live-score,
+button.upcoming-score,
+button.finished-score {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button.live-score {
+    background-color: #e74c3c;
+    color: white;
+}
+
+button.upcoming-score {
+    background-color: #27ae60;
+    color: white;
+}
+
+button.finished-score {
+    background-color: #2c3e50;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* === Updated Calendar Styling (Compact + Finexo Style) === */
+.calender {
+    font-family: 'Cairo', sans-serif;
+    background-color: #132133;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  }
+  
+  .month {
+    background-color: #008ecf;
+    color: #fff;
+    text-align: center;
+    padding: 25px 20px 10px;
+    position: relative;
+  }
+  
+  .month ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .month ul li {
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .month .prev,
+  .month .next {
+    position: absolute;
+    top: 18px;
+    font-size: 1.2em;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .month .prev {
+    left: 20px;
+  }
+  
+  .month .next {
+    right: 20px;
+  }
+  
+  .weekdays {
+    background-color: #f0f0f0;
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .weekdays li {
+    flex: 1;
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.9em;
+  }
+  
+  .days {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-between;
+    gap: 5px;
+  }
+  
+  .days li {
+    list-style: none;
+    width: calc(100% / 7 - 6px);
+    text-align: center;
+    font-size: 0.95em;
+    color: #222;
+    padding: 8px 0;
+    border-radius: 6px;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  
+  .days li:hover {
+    background-color: #e0f7ff;
+  }
+  
+  .days li.active {
+    background-color: #00bbf0;
+    color: white;
+    border-radius: 6px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .days li {
+      font-size: 0.8em;
+      padding: 6px 0;
+    }
+    .month {
+      padding: 20px 15px 8px;
+    }
+    .weekdays li {
+      font-size: 0.75em;
+    }
+  }
+  
+
+.recommended-clubs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.recommended-clubs div {
+    background-color: #1b2c46;
+    width: 300px;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recommended-clubs div:hover {
+    transform: scale(1.03);
+}
+
+.recommended-clubs img {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 35%;
+    right: 10%;
+    border: 3px solid white;
+    border-radius: 15px;
+    background-color: #fff;
+    object-fit: contain;
+}
+
+.recommended-clubs p {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.recommended-clubs h4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 0 0 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-bg);
+    color: #fff;
+    padding: 30px 15px;
+    font-size: 0.95em;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-message {
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-info a:hover {
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+    }
+    .navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .scoreboard {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .recommended-clubs {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+#main-header {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  display: rtl;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.contrast-toggle {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.high-contrast a {
+  color: #00ffff !important;
+}
+
+.high-contrast header,
+.high-contrast nav,
+.high-contrast footer {
+  background-color: #111 !important;
+  border-bottom: 2px solid#fff;
+}
+
+.high-contrast button,
+.high-contrast .btn {
+  background-color: #222 !important;
+  color: #fff !important;
+  border: 1px solid #fff !important;
+}

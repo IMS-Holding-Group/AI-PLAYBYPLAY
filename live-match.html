@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>البث المباشر</title>
+  <link rel="stylesheet" href="live-match-style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- قسم البث -->
+    <section class="video-section">
+      <div class="live-label">مباشر</div>
+      
+      <!-- ✅ الفيديو نفسه -->
+      <video id="matchVideo" controls class="live-video" width="640" height="360">
+        <source src="videoplayback.mp4" type="video/mp4">
+        المتصفح لا يدعم تشغيل الفيديو.
+      </video>      
+  
+      <!-- ✅ الترجمة التفاعلية تظهر مؤقتاً فوق الفيديو -->
+      <div id="popupTranslation" class="popup-line">⏳ جاري تحميل الترجمة...</div>
+  
+      <!-- ✅ البطاقة التحليلية تظهر يسار الشاشة -->
+      <div id="floatingStatsCard" class="popup-card" style="display: none;"></div>
+
+      <div class="controls">
+        <button class="icon-btn">⏯</button>
+        <button class="icon-btn">🔇</button>
+
+        <!-- قسم ازرار التحكم -->
+        <div class="dropdown">
+          <button class="icon-btn" onclick="toggleMenu()">⚙</button>
+          <div id="dropdownMenu" class="dropdown-menu">
+            <div class="menu-item" onclick="toggleSub('typeOptions')" id="typeTitle">1/ نوع التعليق</div>
+            <ul id="typeOptions" class="sub-options">
+              <div class="option-button" onclick="selecs0ption(this, 'type')">تحليلي</div>
+              <div class="option-button" onclick="selecs0ption(this, 'type')">حماسي</div>
+            </ul>
+            <div class="menu-item" onclick="toggleSub('qualityOptions')" id="qualityTitle">2/ الجودة</div>
+            <ul id="qualityOptions" class="sub-options">
+              <div class="option-button" onclick="selecs0ption(this, 'quality')">4K</div>
+              <div class="option-button" onclick="selecs0ption(this, 'quality')">1080p</div>
+              <div class="option-button" onclick="selecs0ption(this, 'quality')">720p</div>
+              <div class="option-button" onclick="selecs0ption(this, 'quality')">480p</div>
+            </ul>
+          </div>
+        </div>
+
+        <button class="icon-btn">⛶</button>
+        <button class="highlight-btn" onclick="saveHighlight()">احفظ لقطة مميزة</button>
+      </div>
+    </section>
+
+    <!-- أخطبوط روشن -->
+    <div class="overlay-box">
+      <img src="akhtabot.png" alt="أخطبوط روشن" class="octopus-img">
+      <p class="greeting">هلا والله! معاك <strong>أخطبوط روشن</strong>، اكتب لي استفسارك وانا اقولك</p>
+      <textarea id="userInput" placeholder="مثلاً: الفريق عنده إصابات ومستواه متوسط..."></textarea>
+      <div class="octo-tools">
+        <button class="octo-button" onclick="analyzeInput()">جاوبني</button>
+        <button id="toggleSpeech" class="octo-button" onclick="toggleSpeech()">🔊 تفعيل النطق</button>
+      </div>
+      
+      
+      <!-- الردود والبيانات الخاصة -->
+      <div class="octobot-response">
+        <p id="questionEcho" class="dev-only" style="display: none;"></p>
+        <p id="predictionResult" class="result"></p>
+        <p id="cognitiveStatus" class="sub-result dev-only" style="display: none;"></p>
+        <p id="emotionStatus" class="sub-result dev-only" style="display: none;"></p>
+        <p id="summaryResult" class="summary-result"></p>
+        <p id="devQuestion" class="dev-only" style="display: none;"></p>
+        <p id="devPrompt" class="dev-only" style="display: none; white-space: pre-wrap;"></p>
+      </div>
+    </div>
+
+    <!-- تسجيل صوتي وتعليق نصي -->
+    <div class="audio-comment-box">
+      <div id="recordIcon" class="record-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" fill="#fff" viewBox="0 0 24 24">
+          <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 14 0h-2Zm-5 9a7.002 7.002 0 0 0 6.93-6H18a6 6 0 1 1-12 0H5.07A7.002 7.002 0 0 0 12 20Z"/>
+        </svg>
+      </div>
+      <p>سجل تعليقك الصوتي </p>
+      <button class="text-comment-btn">اكتب تعليقك النصي :</button>
+      <div id="text-comment-box" style="display: none; margin-top: 10px;">
+        <textarea id="text-comment-input" rows="3" placeholder="اكتب تعليقك هنا..." style="width: 100%;"></textarea>
+        <button onclick="submitTextComment()">إرسال</button>
+      </div>
+      <p class="comment-type">نوع التعليق : حماسي , تكتيكي , التنبؤ بالأهداف</p>
+    </div>
+
+    <!-- صوت التنبيه -->
+    <audio id="beep-sound" src="beep.mp3" preload="auto"></audio>
+
+ 
+
+    <!-- الإحصائيات -->
+    <aside>
+      <div class="stats">
+        <h3>إحصائيات المباراة</h3>
+        <div class="stats-cards">
+          <div class="stat-card">
+            <h4>النتيجة</h4>
+            <p>الهلال <strong id="score1">0</strong> - <strong id="score2">0</strong> النصر</p>
+          </div>
+          <div class="stat-card">
+            <h4>الاستحواذ</h4>
+            <p>الهلال <strong>60%</strong> - <strong>40%</strong> النصر</p>
+          </div>
+          <div class="stat-card">
+            <h4>أفضل لاعب</h4>
+            <p>سالم الدوسري</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    
+
+    <!-- تعليقات المشاهدين -->
+    <section class="chat-section">
+      <h3>تعليقات المشاهدين</h3>
+      <div class="chat-box" id="chat-box"></div>
+      <input type="text" id="chat-input" placeholder="اكتب تعليقك هنا...">
+      <button onclick="sendComment()">إرسال</button>
+    </section>
+  </div>
+
+  <script src="live-match.js"></script>
+</body>
+</html>

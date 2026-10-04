@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>هامة فوز</title> 
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="../CSS/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> 
+    <script src="index.js"></script> 
+</head>
+<body>
+
+    <!-- الهيدر الرئيسي -->
+    <header id="main-header">
+        <a href="index.html" class="logo">هامة فوز</a>
+        <nav class="navigation">
+          <a href="logout.html">تسجيل خروج</a>
+          <a href="Profile.html">الملف الشخصي</a>
+          <a href="around.html">حول</a>
+        </nav>
+    </header>
+
+    <!-- قسم الترحيب (الهيرو) -->
+    <div class="hero-section">
+        <img src="1D.png" alt="شعار هامة فوز" class="logo-animation">
+
+        <div class="hero-content">
+            <img src="football player.png" alt="لاعب كرة القدم 1" class="hero-image right">
+            <h1 class="fade-in">مرحبًا بك في التحليل الرياضي الذكي</h1>
+            <img src="pngtree blue.png" alt="لاعب كرة القدم 2" class="hero-image left">
+        </div>
+
+        <button class="cta-button" onclick="toggleHighContrast()">تفعيل وضع الرؤية لذوي الهمم </button> <!--زر تغير الالوان لذوي الهمم-->
+        <p class="slide-up">نتمنى لك مشاهدة ممتعة ومليئة بالإثارة!</p>
+        <a href="#below-hero" class="cta-button">ابدا</a> <!-- زر الانتقال للأسفل -->
+    </div>
+
+    <!-- بداية القسم التالي -->
+    <div id="below-hero">
+        <!-- محتوى القسم التالي هنا -->
+    </div>
+</body>
+</html>
+
+<!-- الهيدر الثانوي -->
+<header>
+    <br>
+    <a href="index.html" class="logo">هامة فوز</a>
+    <nav class="navigation">
+      <a href="login.html">تسجيل خروج</a>
+      <a href="profile2.html">الملف الشخصي</a>
+      <a href="around.html">حول</a>
+    </nav>
+</header>
+<!-- نهاية الهيدر -->
+
+<!-- بداية قسم المباريات -->
+<div class="matches-container">
+
+    <!-- عنوان فرعي للمواعيد -->
+    <div class="match-text">
+        <p>الرجاء اختيار تاريخ الحدث الرياضي المطلوب!</p>
+    </div>
+
+    <!-- تقويم المباريات -->
+    <div class="calender hidden" id="calendar">
+        <div class="month">
+            <ul>
+                <li class="prev">&#10094;</li>
+                <li class="next">&#10095;</li>
+                <li id="calendar-month">
+                    Abril <br>
+                    <span style="font-size: 10px;">2025</span>
+                </li>
+            </ul>
+        </div>
+        <ul class="weekdays">
+            <li>Mo</li>
+            <li>Tu</li>
+            <li>We</li>
+            <li>Th</li>
+            <li>Fr</li>
+            <li>Sa</li>
+            <li>Su</li>
+        </ul>
+        <ul class="days">
+            <li data-day="1">1</li>
+            <li data-day="2">2</li>
+            <li data-day="3">3</li>
+            <li data-day="4">4</li>
+            <li data-day="5">5</li>
+            <li data-day="6">6</li>
+            <li data-day="7">7</li>
+            <li data-day="8">8</li>
+            <li data-day="9">9</li>
+            <li data-day="10">10</li>
+            <li data-day="11">11</li>
+            <li data-day="12">12</li>
+            <li data-day="13">13</li>
+            <li data-day="14">14</li>
+            <li data-day="15">15</li>
+            <li data-day="16">16</li>
+            <li data-day="17">17</li>
+            <li data-day="18">18</li>
+            <li data-day="19">19</li>
+            <li data-day="20">20</li>
+            <li data-day="21">21</li>
+            <li data-day="22">22</li>
+            <li data-day="23">23</li>
+            <li data-day="24">24</li>
+            <li data-day="25">25</li>
+            <li data-day="26">26</li>
+            <li data-day="27">27</li>
+            <li data-day="28">28</li>
+            <li data-day="29">29</li>
+            <li data-day="30">30</li>
+            <li data-day="31">31</li>
+        </ul>
+    </div>
+    <!-- نهاية التقويم -->
+
+    <!-- عرض المباريات المباشرة -->
+    <div class="live-matches-container">
+        <p>اختر تاريخًا من التقويم</p>
+        <p id="selected-date-text" style="font-weight: bold; margin-top: 10px;"></p>
+        <div class="live-matches"></div>
+    </div>
+    <!-- نهاية المباريات المباشرة -->
+</div>
+<!--إضافة Js للتواريخ  -->
+<script>
+    const days = document.querySelectorAll('.days li');
+    const matchContainer = document.querySelector('.live-matches');
+    const matchText = document.querySelector('.live-matches-container p');
+
+    const matches = {
+        24: {
+            teams: "الهلال و الشباب",
+            time: "6:30 مساء",
+            date: "24/4/2025",
+            image: "alhilal-and-alshabab.jpg"
+        },
+        25: { teams: "السعودية والصين",
+            time: "8:00 مساء",
+            date: "25/4/2025",
+            image: "KSA_China.webp"
+        },
+        26: {
+            teams: "الاهلي و الشباب",
+            time: "9:00 مساء",
+            date: "26/4/2025",
+            image: "alahly-and-alshabab.jpg"
+        }
+    };
+
+    days.forEach(day => {
+        day.addEventListener('click', () => {
+            const selectedDay = day.getAttribute('data-day');
+
+            if (matches[selectedDay]) {
+                const match = matches[selectedDay];
+                matchContainer.innerHTML = `
+                    <img src="${match.image}" alt="${match.teams}">
+                    <p>
+                        ${match.teams} <br>
+                        التوقيت: ${match.time} <br>
+                        التاريخ: ${match.date}
+                    </p>
+                `;
+                matchText.textContent = "المباريات المباشرة:";
+            } else {
+                matchContainer.innerHTML = "";
+                matchText.textContent = "لا يوجد حدث في هذا اليوم.";
+            }
+
+            // تمييز اليوم المختار
+            days.forEach(d => d.classList.remove('active'));
+            day.classList.add('active');
+        });
+    });
+    // 
+window.addEventListener("DOMContentLoaded", () => {
+    const defaultDay = "25";
+    const defaultDayElement = document.querySelector(`.days li[data-day="${defaultDay}"]`);
+
+    if (defaultDayElement) {
+        defaultDayElement.click(); // يعرض المباراة ويضيف كلاس التحديد
+    }
+});
+
+</script>
+<!-- Js  نهاية للتواريخ  -->
+
+<div id="currentMatches" class="matches-container">
+<!-- عنوان فرعي للمباريات الحالية -->
+<div class="match-text">
+    <p>المباريات الحالية</p>
+</div>
+<!-- المباريات راح تضاف هنا-->
+</div>
+
+<!-- مباراة الصين ضد السعودية -->
+<div class="scoreboard">
+    <div class="team">
+        <img src="ksa.jpeg" alt="نادي النصر">
+        <p>السعودية</p>
+    </div>
+    <div class="score">
+        <p>0 - 0</p>
+        <a href="live-match.html">
+            <button class="live-score">اضغط لبدء البث المباشر</button>
+        </a>
+    </div>
+    <div class="team">
+        <img src="Chaina.png" alt="نادي الهلال">
+        <p>الصين</p>
+    </div>
+</div>
+
+<!-- مباراة قادمة: الأهلي ضد الهلال -->
+<div class="scoreboard">
+    <div class="team">
+        <img src="Alahli.png" alt="نادي الأهلي">
+        <p>Saudi arabia</p>
+    </div>
+    <div class="score">
+        <p class="score-time">01 / 05 / 2025</p>
+        <p class="score-time">PM 9:00</p>
+        <p>0 - 0</p>
+        <button class="upcoming-score">لم تعرض بعد</button>
+    </div>
+    <div class="team">
+        <img src="Hilal.png" alt="نادي الهلال">
+        <p>China</p>
+    </div>
+</div>
+
+
+<!-- مباراة مسجلة: الرائد ضد القادسية -->
+<div class="scoreboard">
+    <div class="team">
+        <img src="AlRaed.png" alt="نادي الرائد">
+        <p>الرائد</p>
+    </div>
+    <div class="score">
+        <p>0 - 0</p>
+        <a href="offline.html">
+        <button class="finished-score">اضغط لعرض المباراه المسجلة</button>
+        </a> 
+    </div>
+    <div class="team">
+        <img src="Qadsiah.png" alt="نادي القادسية">
+        <p>القادسية</p>
+    </div>
+</div>
+<!-- نهاية قسم المباريات -->
+
+<!-- بداية الفوتر -->
+<footer>
+    <div class="footer-container">
+        <p>&copy;  فريق هامة فوز 2025</p>
+        <p class="footer-message">نؤمن بأن العزيمة تصنع الفرق , وبالإصرار نحقق الفوز</p>
+        <div class="contact-info">
+            <a href="mailto:HF@gmail.com">
+                <i class="fas fa-envelope"></i>HF@gmail.com
+            </a>
+            <a href="tel:+119990065">
+                <i class="fas fa-phone"></i>119990065
+            </a>
+            <a href="https://wa.me/119990065" target="_blank">
+                <i class="fab fa-whatsapp"></i>تواصل عبر واتساب
+            </a>
+        </div>
+    </div>
+</footer>
+<!-- نهاية الفوتر -->
+
+<!-- سكربت جافاسكربت خارجي -->
+<script src="index.js"></script>  
+
+</body>
+</html>
+

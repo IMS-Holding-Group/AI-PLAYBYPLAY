@@ -1,0 +1,77 @@
+/* تنسيقات صفحة تسجيل الخروج */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background: linear-gradient(to bottom right, #0f1521, #1b2c46);
+  color: #fff;
+}
+
+.logout-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  backdrop-filter: blur(10px);
+}
+
+.logout-box h2 {
+  color: #00bbf0;
+  margin-bottom: 25px;
+  font-size: 1.6em;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button.yes {
+  background-color: #00bbf0;
+  color: #000;
+}
+
+button.yes:hover {
+  background-color: #008ecf;
+  transform: scale(1.05);
+}
+
+button.no {
+  background-color: transparent;
+  border: 2px solid #00bbf0;
+  color: #00bbf0;
+}
+
+button.no:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .logout-box {
+    padding: 25px;
+  }
+  button {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+}

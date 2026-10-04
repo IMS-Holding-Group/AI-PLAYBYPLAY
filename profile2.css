@@ -1,0 +1,318 @@
+/* إعدادات أساسية للصفحة */
+body {
+  margin: 0;
+  font-family: 'Tahoma', sans-serif;
+  background-color: #0e1a2b; /* لون خلفية داكن */
+  color: white; /* النص باللون الأبيض */
+  direction: rtl; /* اتجاه النص من اليمين لليسار */
+  overflow-x: hidden; /* إخفاء التمرير الأفقي */
+}
+
+/* الحاوية الأساسية للملف الشخصي */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+/* البطاقة التي تحتوي معلومات المستخدم */
+.profile-card {
+  background-color: #1a2d45;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 187, 240, 0.2); /* ظل ناعم */
+  transform: translateY(50px);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.profile-card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* صورة المستخدم */
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #00bbf0;
+  margin-bottom: 15px;
+}
+
+h2 {
+  margin: 10px 0 5px;
+  font-size: 24px;
+  color: #00bbf0;
+}
+
+.email {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.info p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.buttons {
+  margin-top: 25px;
+}
+
+
+/* أزرار التحكم */
+.buttons {
+  margin-top: 25px;
+}
+
+/* زر عام */
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* زر تعديل */
+.edit {
+  background-color: #00bbf0;
+  color: white;
+}
+
+/* زر تسجيل الخروج */
+.logout {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+/* نموذج تعديل المعلومات */
+.edit-form {
+  background-color: #132238;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  display: none;
+  width: 90%;
+  max-width: 400px;
+}
+
+/* الحقول داخل نموذج التعديل */
+.edit-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+}
+
+.highlighted-shots, .suggestions {
+  margin: 40px auto; /* يخلي القسم في النص */
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.highlighted-shots h3, .suggestions h3 {
+color: #00bbf0;
+margin-bottom: 20px;
+text-align: center;
+}
+
+.shots-container {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+}
+
+.shot-card {
+background-color: #1a2d45;
+border-radius: 10px;
+padding: 15px;
+width: 220px;
+box-shadow: 0 0 10px rgba(0, 187, 240, 0.1);
+text-align: center;
+transition: transform 0.3s;
+}
+
+.shot-card img {
+width: 100%;
+border-radius: 6px;
+margin-bottom: 10px;
+}
+
+.shot-card:hover {
+transform: scale(1.05);
+}
+
+.shot-actions {
+margin-top: 10px;
+color: #fff;
+}
+
+.shot-actions button {
+background-color: #00bbf0;
+border: none;
+padding: 6px 10px;
+border-radius: 4px;
+cursor: pointer;
+font-weight: bold;
+}
+
+.suggestions .suggestion-slider {
+display: flex;
+gap: 15px;
+overflow-x: auto;
+padding: 10px 0;
+}
+
+.suggestion-card {
+min-width: 180px;
+background-color: #132238;
+padding: 15px;
+border-radius: 6px;
+text-align: center;
+color: #fff;
+flex-shrink: 0;
+} 
+.like-button {
+background: none;
+border: none;
+cursor: pointer;
+padding: 5px;
+transition: transform 0.2s ease;
+}
+
+.like-button .heart {
+font-size: 22px;
+color: #888;
+transition: color 0.3s ease;
+}
+
+.like-button.liked .heart {
+color: #e91e63; /* لون القلب عند الإعجاب */
+transform: scale(1.2);
+}
+.highlighted-shots {
+background-color: #06142e;
+padding: 30px;
+color: #fff;
+text-align: center;
+direction: rtl;
+}
+
+.highlighted-shots h3 {
+color: #00bcd4;
+margin-bottom: 30px;
+font-size: 24px;
+}
+
+.shots-container {
+display: flex;
+flex-wrap: wrap;
+gap: 30px;
+justify-content: center;
+}
+
+.shot-card {
+background-color: #0c1c3c;
+border-radius: 10px;
+padding: 20px;
+width: 45%;
+min-width: 300px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.shot-card video {
+width: 100%;
+border-radius: 10px;
+margin-bottom: 15px;
+}
+
+.shot-card p {
+text-align: right;
+font-size: 16px;
+margin-bottom: 10px;
+}
+
+.shot-actions {
+display: flex;
+justify-content: space-between;
+align-items: center;
+color: #ccc;
+font-size: 14px;
+}
+
+.like-button {
+background: none;
+border: none;
+cursor: pointer;
+padding: 5px;
+transition: transform 0.2s ease;
+}
+
+.like-button .heart {
+font-size: 22px;
+color: #888;
+transition: color 0.3s ease;
+}
+
+.like-button.liked .heart {
+color: #e91e63;
+transform: scale(1.2);
+}
+
+
+.add-highlight-form {
+  background-color: #0e1a2b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 25px;
+  box-shadow: 0 0 10px rgba(231, 232, 245, 0.3);
+}
+
+.add-highlight-form h4 {
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.add-highlight-form input,
+.add-highlight-form select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: none;
+  color: #000000;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.add-highlight-form button {
+  background-color: #007acc;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.add-highlight-form button:hover {
+  background-color: #005fa3;
+}
+
+

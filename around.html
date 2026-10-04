@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>حول</title> 
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- استدعاء ملف الجافاسكربت اللي فيه الفنكشن -->
+    <script src="index.js" defer></script>
+
+    <!-- التحقق من localStorage -->
+    <script>
+      // التحقق من نوع المستخدم قبل تحميل باقي الصفحة
+      window.addEventListener("DOMContentLoaded", () => {
+        const userType = localStorage.getItem("userType");
+        if (userType === "disabled" && typeof toggleHighContrast === "function") {
+          toggleHighContrast();
+        }
+      });
+    </script>
+
+    <!-- روابط خارجية -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+</head>
+
+<body>
+
+    <!-- الهيدر الرئيسي -->
+    <header id="main-header">
+        <a href="index.html" class="logo">هامة فوز</a>
+        <nav class="navigation">
+          <a href="logout.html">تسجيل خروج</a>
+          <a href="Profile.html">الملف الشخصي</a>
+          <a href="around.html">حول</a>
+        </nav>
+    </header>
+    
+    <div class="hero-section">
+        <img src="1D.png" alt="شعار هامة فوز" class="logo-animation">
+
+        <div class="hero-content">
+            <img src="football player.png" alt="لاعب كرة القدم 1" class="hero-image right">
+            <h1 class="fade-in">! من نحن</h1>
+            <img src="pngtree blue.png" alt="لاعب كرة القدم 2" class="hero-image left">
+        </div>
+
+        <p class="slide-up">مرحبا بك في هامة فوز, المنصة الذكية اللي تجمع بين متعة المشاهدة وذكاء التحليل</p>
+        <p class="slide-up">صممنا بيئة تفاعلية تعيش فيها جو المباريات لحظة بلحظة, تعلق, تحلل, وتشارك رأيك بأسلوب ممتع</p>
+        <br><br>
+        <h3 class="slide-up">وش نقدم ؟</h3>
+        <p class="slide-up">بث مباشر للمباريات </p>
+        <p class="slide-up">تقويم للمواعيد والانشطة</p>
+        <p class="slide-up">نظام تحليلي تفاعلي وذكي</p>
+        <p class="slide-up">تسجيل دخول آمن وسلس</p>
+        <br><br>
+        <h3 class="slide-up">رؤيتنا</h3>
+        <p class="slide-up">نخلق تجربة رياضية رقمية, فيها التفاعل مايوقف , والصوت لكل مشجع مسموع</p>
+        <br><br>
+        <h3>قيمنا</h3>
+        <p>التفاعل- الذكاء - المتعة - الشفافية</p>
+        <br>
+    </div>
+</body>
+</html>

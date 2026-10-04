@@ -1,0 +1,213 @@
+/* التنسيقات العامة للموقع (الصفحة الرئيسية) */
+/* === Final Finexo-inspired Styling (Perfect Layout Fix) === */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #00bbf0;
+    --secondary-color: #0f1521;
+    --accent-color: #007fa4;
+    --light-bg: #f9f9f9;
+    --dark-bg: #0d1725;
+    --text-color: #ffffff;
+    --button-hover: #008ecf;
+    --card-bg: #132133;
+    --highlight: #00bbf0;
+    --card-shadow: rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Cairo', 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+
+/* Header Styling */
+header {
+    background-color: rgba(0, 0, 0, 0.3); /* شفاف */
+    backdrop-filter: blur(8px); /* ضبابية */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: rtl;
+    transition: top 0.4s ease-in-out, box-shadow 0.3s ease;
+    z-index: 999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  header.scrolled {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: #00bbf0;
+    text-decoration: none;
+    margin-left: auto;
+  }
+  
+  .navigation {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+  
+  .navigation a {
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .navigation a:hover {
+    color: #00bbf0;
+  }
+  
+
+/* === Hero Section Styling - Finexo Modern Compact === */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(to bottom, #0f1521, #1b2c46);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    gap: 20px;
+    text-align: center;
+    scroll-margin-top: 100px;
+  }
+  
+  .logo-animation {
+    max-width: 250px;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+ /* === Hero Section Styling - Finexo Modern Compact === */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(to bottom, #0f1521, #1b2c46);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    gap: 5px;
+    text-align: center;
+    scroll-margin-top: 100px;
+  }
+  
+  .logo-animation {
+    max-width: 250px;
+    animation: pulse 2s ease-in-out infinite;
+    margin-bottom: 5px;
+  }
+  
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+  }
+  
+  .hero-image {
+    width: 240px;
+    transition: transform 0.5s ease;
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  h1 {
+    font-size: 2em;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  
+  p {
+    font-size: 1em;
+    margin-bottom: 6px;
+    color: #ccc;
+    animation: fadeIn 1.2s ease-in-out forwards;
+  }
+  
+  .cta-button {
+    padding: 14px 28px;
+    background-color: #00bbf0;
+    color: #132133;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+    animation: fadeIn 1.4s ease-in-out forwards;
+    margin-top: 6px;
+  }
+  
+  .cta-button:hover {
+    background-color: #008ecf;
+    transform: translateY(-3px);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Scroll Target Below Hero */
+  #below-hero {
+    padding: 60px 20px;
+    background-color: #0f1521;
+    color: #fff;
+    text-align: center;
+  }
+  
+  

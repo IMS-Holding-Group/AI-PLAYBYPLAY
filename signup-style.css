@@ -1,0 +1,155 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap');
+
+/* ===== إعدادات أساسية للجسم (Body) ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif; /* ✅ خط مناسب للغة العربية */
+  background-color: #021024;
+  color: #fff;
+  background-image: linear-gradient(135deg, #0f1521 0%, #1b2c46 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== صندوق نموذج التسجيل ===== */
+.login-section {
+  background-color: rgba(15, 21, 33, 0.9);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 187, 240, 0.1);
+  width: 100%;
+  max-width: 480px;
+  box-sizing: border-box;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* ===== حركة دخول ناعمة للنموذج ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== عنوان صفحة التسجيل ===== */
+h2 {
+  text-align: center;
+  color: #00bbf0;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+/* ===== تسميات الحقول ===== */
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+/* ===== الحقول النصية ===== */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #00bbf055;
+  background-color: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===== تأثير عند التركيز على الحقل ===== */
+form input:focus {
+  border-color: #00bbf0;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 187, 240, 0.4);
+}
+
+/* ===== خيارات اختيار النوع (ذكر / أنثى) ===== */
+.gender-options {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0 20px;
+}
+
+.gender-options label {
+  margin-right: 5px;
+  font-size: 0.9rem;
+  color: #eee;
+}
+
+.gender-options input {
+  margin-right: 6px;
+  transform: scale(1.1);
+}
+
+/* ===== زر "تسجيل" ===== */
+button[type="submit"] {
+  width: 100%;
+  background-color: #00bbf0;
+  color: #021024;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0099cc;
+  transform: scale(1.02);
+}
+
+/* ===== قسم رابط الرجوع لتسجيل الدخول ===== */
+.sign-up {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.sign-up a {
+  color: #00bbf0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sign-up a:hover {
+  text-decoration: underline;
+}
+
+/* ===== تنسيقات شاشة الموبايل الصغيرة ===== */
+@media (max-width: 500px) {
+  .login-section {
+    padding: 25px 20px;
+    border-radius: 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .gender-options {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
+
