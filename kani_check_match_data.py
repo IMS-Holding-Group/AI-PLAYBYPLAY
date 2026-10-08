@@ -3,7 +3,7 @@ import requests
 import json
 
 # --- مفاتيحك ---
-API_KEY = "090f30ede667fc392255ad703176cb79"  # ← ضع مفتاح API-Football هنا
+API_KEY = ""  # ← ضع مفتاح API-Football هنا
 FIXTURE_ID = 878076  # ← مثال: مباراة الفتح والاتحاد
 
 # --- إعداد headers ---
